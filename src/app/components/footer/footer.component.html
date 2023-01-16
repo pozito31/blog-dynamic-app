@@ -1,0 +1,55 @@
+<div class="row bg-white">
+  <div class="col-12">
+    <div class="container mt-4 mb-4">
+
+      <div class="row">
+
+        <!-- Widget donar -->
+        <div class="col-md-4 col-12">
+          <app-widget title="label.donate.title" [templateContent]="widget_donate"></app-widget>
+        </div>
+
+        <!-- Widjet trabajos -->
+        <div class="col-md-4 col-12 text-center">
+          <app-widget title="label.jobs.title" [templateContent]="widget_jobs"></app-widget>
+        </div>
+
+        <!-- Widget udemy -->
+        <div class="col-md-4 col-12">
+          <app-widget title="label.udemy.title" [templateContent]="widget_udemy"></app-widget>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <!-- Copyright -->
+  <div class="col-12">
+    <app-copyright></app-copyright>
+  </div>
+</div>
+
+<!-- Plantillas -->
+
+<ng-template #widget_donate>
+  <p>{{'label.text.donate' | translate}}</p>
+  <a href="https://www.paypal.com/es/home" class="btn btn-primary">{{'label.donate' | translate}}</a>
+</ng-template>
+
+<ng-template #widget_jobs>
+  <a href="https://www.neuvoo.es/" traget="_blank">
+    <img src="assets/img/neuvoo-logo.png" class="img-fluid">
+  </a>
+  <a href="https://es.jooble.org/" traget="_blank">
+    <img src="assets/img/jooble.png" class="img-fluid">
+  </a>
+</ng-template>
+
+<ng-template #widget_udemy>
+  <p>{{'label.text.udemy' | translate}}</p>
+  <p>{{'label.visit.udemy' | translate}} <a
+      href="https://www.udemy.com/user/discoduroderoer/">{{'label.profile.udemy' | translate}}</a></p>
+</ng-template>

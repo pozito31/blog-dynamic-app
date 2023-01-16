@@ -1,0 +1,45 @@
+<div class="row m-0 p-4 bg-white">
+  <div class="col-12">
+
+    <!-- Titulo -->
+    <div class="row">
+      <div class="col-12">
+        <h1>{{'label.leave.comment' | translate}}</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+
+        <form #form="ngForm" (ngSubmit)="addComment()">
+
+          <!-- Usuario -->
+          <div class="row form-group">
+            <div class="col-12">
+              <label for="user">{{'label.user.comment' | translate}}</label>
+              <input type="text" class="form-control" name="user" id="user" [(ngModel)]="comment.user" required>
+            </div>
+          </div>
+
+          <!-- Texto del comentario -->
+          <div class="row form-group">
+            <div class="col-12">
+              <label for="text">{{'label.text.comment' | translate}}</label>
+              <textarea class="form-control" name="text" id="text" [(ngModel)]="comment.text" required></textarea>
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <div class="col-12">
+              <button type="submit" [disabled]="form.invalid" class="btn btn-primary">{{'label.save.comment' | translate}}</button>
+            </div>
+          </div>
+
+
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</div>

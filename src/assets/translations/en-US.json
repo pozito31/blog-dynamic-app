@@ -1,0 +1,21 @@
+{
+    "label.search": "Search",
+    "label.admin": "Admin",
+    "label.donate.title": "Donations",
+    "label.jobs.title" : "Jobs",
+    "label.udemy.title": "Udemy courses",
+    "label.text.donate": "Do you want to do a donation?",
+    "label.donate": "Donate",
+    "label.text.udemy": "Do you want to see my udemy courses?",
+    "label.udemy.visit": "Visit my ",
+    "label.udemy.profile": "profile",
+    "label.all.rights": "All rights reserved.",
+    "label.no.posts": "No posts",
+    "label.leave.comment": "Leave comment",
+    "label.user.comment": "User",
+    "label.text.comment": "Comment",
+    "label.save.comment": "Publish comment",
+    "label.comments": "Comments",
+    "label.previous": "Previous",
+    "label.next": "Next"
+}

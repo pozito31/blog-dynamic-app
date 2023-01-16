@@ -1,0 +1,16 @@
+#posts{
+    min-height: 300px;
+}
+
+#posts .no-posts {
+    font-size: 250px;
+    color: #000;
+}
+
+#posts .text-no-posts {
+    font-size: 28px;
+}
+
+#posts ::ng-deep .ngx-pagination{
+    margin: 0;
+}

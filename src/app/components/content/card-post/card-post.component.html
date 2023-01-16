@@ -1,0 +1,16 @@
+<div class="mb-4 p-0" id="card-post">
+  <div class="card">
+    <!-- Imagen del post -->
+    <img *ngIf="post.img" class="card-img-top" [src]="post.img" >
+    <div class="card-body mt-1 mb-1">
+      <h2 class="card-title">
+        <!-- Titulo del post -->
+        <a [routerLink]="['/post', post.id]" routerLinkActive="router-link-active" >
+          {{post.title}}
+        </a>
+      </h2>
+      <!-- Fecha del post -->
+      <h3>{{post.date | date: 'dd/MM/yyyy'}}</h3>
+    </div>
+  </div>
+</div>

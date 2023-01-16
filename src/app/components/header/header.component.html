@@ -1,0 +1,76 @@
+<div class="row" id="header">
+  <div class="col-12">
+    <div class="container mt-2 mb-2">
+
+      <div class="row">
+
+        <!-- Redes sociales -->
+        <div class="col-md-4 col-6">
+          <a [href]="sn.link" [title]="sn.name" class="mr-4 icon-sn" target="_blank"
+            *ngFor="let sn of config.socialNetworks">
+            <i [class]="sn.icon"></i>
+          </a>
+        </div>
+
+        <div class="col-md-4 col-6 offset-md-4 text-right">
+
+          <!-- Icono para abrir/cerrar bloque de busqueda -->
+          <i class="fa fa-search mr-4 icon-search" *ngIf="!showSearch" (click)="openInputSearch($event)"></i>
+          <i class="fa fa-times mr-4 icon-close" *ngIf="showSearch" (click)="openInputSearch($event)"></i>
+
+          <!-- Bloque de busqueda -->
+          <div class="block-search input-group" *ngIf="showSearch" clickOutside (clickOutsideElement)="hideInputSearch()">
+            <input type="text" #search (keydown.enter)="searchPosts(search.value)" />
+            <span class="input-group-btn">
+              <button type="button" (click)="searchPosts(search.value)" class="btn btn-primary rounded-0">{{'label.search' | translate}}</button>
+            </span>
+          </div>
+
+          <!-- Link para la administracion, el link esta en el app-config -->
+          <a [href]="config.linkDashboard" class="btn btn-sm btn-primary text-light"
+            target="_blank">{{'label.admin' | translate}}</a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <div class="row bg-white text-center">
+      <div class="col-12">
+        <!-- Logo -->
+        <div class="container mt-4 mb-4">
+          <img [src]="config.logo" class="img-logo img-fluid mt-4 mb-4" [routerLink]="['/content']" >
+        </div>
+      </div>
+    </div>
+
+    <div class="row bg-white border-top" *ngIf="categories.length > 0">
+      <div class="col-12">
+        <div class="container">
+
+          <!-- Navbar -->
+          <nav class="navbar navbar-expand-sm navbar-light bg-white">
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+              <ul class="navbar-nav m-auto mt-2 mt-lg-0">
+                <!--  Links categorias -->
+                <li class="nav-item" *ngFor="let category of categories" (click)="showPosts(category)">
+                  <a class="nav-link">{{category.name}}</a>
+                </li>
+              
+              </ul>
+            </div>
+          </nav>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

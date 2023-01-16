@@ -1,0 +1,20 @@
+<div class="row mt-4 mb-4">
+  <div class="col-12">
+
+    <!-- Titulo del widget -->
+    <div class="row">
+      <div class="col-12">
+        <h1>{{title | translate}}</h1>
+        <hr/>
+      </div>
+    </div>
+
+    <!-- Mostramos la plantilla dada -->
+    <div class="row">
+      <div class="col-12">
+        <ng-template *ngTemplateOutlet="templateContent"></ng-template>
+      </div>
+    </div>
+
+  </div>
+</div>

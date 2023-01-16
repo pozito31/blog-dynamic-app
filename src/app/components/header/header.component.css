@@ -1,0 +1,35 @@
+#header .icon-sn,
+#header .icon-search, 
+#header .icon-close,
+#header .img-logo,
+#header .nav-item {
+    cursor: pointer;
+}
+
+#header .icon-sn {
+    font-size: 16px;
+    color: #767676;
+}
+
+#header .icon-search, #header .icon-close {
+    color: #767676;
+}
+
+#header .block-search {
+    position: absolute;
+    padding: 10px;
+    background: #f5f5f5;
+    z-index: 1;
+}
+
+#header .block-search input{
+    width: 65%;
+}
+
+@media(max-width: 576px){
+
+    #header .block-search {
+        left: -120px;
+        width: auto;
+    }
+}

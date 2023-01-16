@@ -1,0 +1,66 @@
+<div class="row mt-4 mb-4" id="posts">
+  <div class="col-12">
+    <div class="container">
+
+      <div class="row" *ngIf="showPosts">
+        <div class="col-12">
+
+          <!-- No hay posts -->
+          <ng-container *ngIf="posts.length === 0">
+
+            <!-- Icono -->
+            <div class="row text-center mb-2">
+              <div class="col-12">
+                <i class="fa fa-paper-plane no-posts"></i>
+              </div>
+            </div>
+
+            <!-- Texto -->
+            <div class="row">
+              <div class="col-12 text-center">
+                <span class="text-no-posts">{{'label.no.posts' | translate}}</span>
+              </div>
+            </div>
+
+          </ng-container>
+
+          <!-- Hay posts -->
+          <ng-container *ngIf="posts.length > 0">
+
+            <!-- Si esta la opcion de posts principal, muestra el primer post con col-12 -->
+            <div class="row">
+              <div class="col-12"
+                [ngClass]="{'col-md-4 col-sm-6': index % config.numPostsPerPage != 0 || !config.showPrincipalPost}"
+                *ngFor="let post of posts | paginate: { itemsPerPage: config.numPostsPerPage, currentPage: page};let index=index">
+                <!-- Posts -->
+                <app-card-post [post]="post"></app-card-post>
+              </div>
+            </div>
+
+            <div class="container">
+              <div class="row" *ngIf="posts.length > config.numPostsPerPage">
+                <div class="col-12 text-center p-4 bg-white">
+
+                  <!-- Paginacion -->
+                  <pagination-controls [previousLabel]="'label.previous' | translate"
+                    [nextLabel]="'label.next' | translate" (pageChange)="page = $event">
+                  </pagination-controls>
+                </div>
+              </div>
+            </div>
+
+          </ng-container>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Spinner -->
+<div class="h-100 overlay" *ngIf="!showPosts">
+  <div class="spinner">
+    <img src="assets/img/spinner.gif" alt="">
+  </div>
+</div>

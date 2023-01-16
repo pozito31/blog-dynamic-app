@@ -1,0 +1,30 @@
+{
+    "website": "Discoduroderoer",
+    "logo": "assets/img/logo.png",
+    "show_principal_post": true,
+    "num_posts_per_page": 10,
+    "num_comments_per_page": 5,
+    "social_networks": [
+        {
+            "name": "Facebook",
+            "icon": "fa fa-facebook",
+            "link": "https://www.facebook.com/pages/Disco-Duro-de-Roer/516155851734486?ref=hl"
+        },
+        {
+            "name": "Linkedin",
+            "icon": "fa fa-linkedin",
+            "link": "https://www.linkedin.com/in/fernando-ure%C3%B1a-gomez-07b04049/"
+        },
+        {
+            "name": "Youtube",
+            "icon": "fa fa-youtube",
+            "link": "https://www.youtube.com/user/DiscoDurodeRoer"
+        },
+        {
+            "name": "Twitter",
+            "icon": "fa fa-twitter",
+            "link": "https://twitter.com/DiscoDurodeRoer"
+        }
+    ],
+    "link_dashboard": "http://localhost:3000"
+}

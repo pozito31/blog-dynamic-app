@@ -1,0 +1,52 @@
+<div class="row m-0 p-4 bg-white" id="list-comments" *ngIf="showComments && listComments.length > 0">
+  <div class="col-12">
+
+    <!-- Titulo -->
+    <div class="row">
+      <div class="col-12">
+        <h1>{{'label.comments' | translate}}</h1>
+        <hr />
+      </div>
+    </div>
+
+    <div class="row mb-2" *ngFor="let comment of listComments | paginate: { itemsPerPage: config.numCommentsPerPage, currentPage: page}">
+      <div class="col-12">
+
+        <!-- Usuario -->
+        <div class="row">
+          <div class="col-12 user">
+            <span class="d-block">{{comment.user}}</span>
+          </div>
+        </div>
+
+        <!-- Fecha -->
+        <div class="row">
+          <div class="col-12 date mb-2">
+            <span class="d-block">{{comment.date | date: 'dd/MM/yyyy'}}</span>
+          </div>
+        </div>
+
+        <!-- Texto del comentario -->
+        <div class="row">
+          <div class="col-12">
+            <span class="d-block">{{comment.text}}</span>
+            <hr/>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Paginacion -->
+    <div class="row" *ngIf="listComments.length > config.numCommentsPerPage">
+      <div class="col-12 text-center">
+        <pagination-controls 
+          [previousLabel]="'label.previous' | translate"
+          [nextLabel]="'label.next' | translate"
+          (pageChange)="page = $event"
+        ></pagination-controls>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,11 @@
+#post .title {
+    font-size: 2.2906835em;
+    line-height: 1.214;
+    color: #1c1e1f;
+    font-weight: 600;
+}
+
+#post .date-post{
+    font-weight: 400;
+    color: #b2b2b2;
+}
